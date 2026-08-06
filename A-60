@@ -6,7 +6,7 @@ local spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/Regul
  
 local entity = spawner.Create({
     Entity = {
-        Name = "Hardcore A-60",
+        Name =  "A60",
         Asset = "rbxassetid:////14826206904",
         HeightOffset = 0
     },
@@ -60,8 +60,7 @@ local entity = spawner.Create({
  
 entity:SetCallback("OnSpawned", function()
     print("Entity has spawned")
-	local entity = workspace.A185.RushNew
-	entity.spawn:Play()
+	local entity = workspace.A60.RushNew
 	entity.spawn.RollOffMinDistance = 1000
 	entity.Position = Vector3.new(0, 0, -1000)
 	task.spawn(function()
@@ -76,7 +75,7 @@ entity:SetCallback("OnSpawned", function()
 		script.Image = "rbxassetid://15187137539"
 		task.wait (0.09)
 		script.Image = "rbxassetid://15187137650"
-		task.wait (0.09)
+        task.wait (0.09)
 end)
  
 entity:SetCallback("OnStartMoving", function()
