@@ -70,7 +70,7 @@ entity:SetCallback("OnSpawned", function()
 			object.CanCollide = false
 
 			local textures = {
-				"rbxassetid://102898706588721",
+				"rbxassetid://105616819261906",
 				"rbxassetid://113341291399358",
 				"rbxassetid://84513865367343",
 				"rbxassetid://91404640127708",
