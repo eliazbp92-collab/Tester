@@ -60,75 +60,40 @@ local entity = Spawner:Create({
 
 entity:SetCallback("OnSpawned", function()
 	print("Entity has spawned")
-	
-	local function GetGitSound(GithubSnd, SoundName)
-		local url = GithubSnd
-		if not isfile(SoundName .. ".mp3") then
-			writefile(SoundName .. ".mp3", game:HttpGet(url))
-		end
-		local sound = Instance.new("Sound")
-		sound.SoundId = (getcustomasset or getsynasset)(SoundName .. ".mp3")
-		return sound
-	end
-	local Ambience = GetGitSound("https://github.com/reboundplayz/Doors-Fixed-Modes/raw/refs/heads/main/A100Ambience.mp3.mpeg","Toilet.com")
-	Ambience.Parent = workspace["A-100"].HumanoidRootPart
-	Ambience.Volume = 4
-	Ambience.Looped = true
-	Ambience.PlaybackSpeed = 1
-	Ambience.RollOffMinDistance = 100
-	Ambience.RollOffMaxDistance = 200
-	Ambience:Play()
-	
-	
-	task.spawn(function()
-		local A1 = workspace["A-100"].HumanoidRootPart.A1.ImageLabel
-		local random = Random.new(1, 6)
 
-		while task.wait(0.3) do
-			if random == 1 then
-				A1.Image = "rbxassetid://11131703032"
-			elseif random == 2 then
-				A1.Image = "rbxassetid://1972219024"
-			elseif random == 3 then
-				A1.Image = "rbxassetid://1822114127"
-			elseif random == 4 then
-				A1.Image = "rbxassetid://13445926051"
-			elseif random == 5 then
-				A1.Image = "rbxassetid://3413871766"
-			elseif random == 6 then
-				A1.Image = "rbxassetid://11131699495"
+	task.spawn(function()
+		local success, err = pcall(function()
+			local part = workspace:WaitForChild("A-60", 10)
+			local object = part:WaitForChild("RushNew", 10)
+			local attachment = object:WaitForChild("Main", 10)
+			local face = attachment:WaitForChild("Face", 10)
+			object.CanCollide = false
+
+			local textures = {
+				"rbxassetid://102898706588721",
+				"rbxassetid://113341291399358",
+				"rbxassetid://84513865367343",
+				"rbxassetid://91404640127708",
+				"rbxassetid://140295944899005",
+				"rbxassetid://118168477565330",
+				"rbxassetid://71280507926908",
+				"rbxassetid://99778755008712",
+			}
+
+			local startTime = tick()
+			while tick() - startTime < 10 and part and part.Parent do
+				for _, texture in ipairs(textures) do
+					if face then
+						face.Texture = texture
+					end
+					task.wait(0.1)
+				end
 			end
-		end
-	end)
-	task.spawn(function()
-		local A2 = workspace["A-100"].HumanoidRootPart.A2.ImageLabel
-		local random = Random.new(1, 6)
+		end)
 
-		while task.wait(0.3) do
-			if random == 1 then
-				A2.Image = "rbxassetid://11131703032"
-			elseif random == 2 then
-				A2.Image = "rbxassetid://1972219024"
-			elseif random == 3 then
-				A2.Image = "rbxassetid://1822114127"
-			elseif random == 4 then
-				A2.Image = "rbxassetid://13445926051"
-			elseif random == 5 then
-				A2.Image = "rbxassetid://3413871766"
-			elseif random == 6 then
-				A2.Image = "rbxassetid://11131699495"
-			end
+		if not success then
+			warn("Error in OnSpawned texture animation:", err)
 		end
-	end)
-	task.spawn(function()
-		local A1 = workspace["A-100"].HumanoidRootPart.A1
-		local A2 = workspace["A-100"].HumanoidRootPart.A2
-
-		while task.wait(0.05) do
-			A1.ExtentsOffsetWorldSpace = Vector3.new(Random.new():NextNumber(-1.5, 1.5), Random.new():NextNumber(-1.5, 1.5), Random.new():NextNumber(-1.5, 1.5))
-			A2.ExtentsOffsetWorldSpace = Vector3.new(Random.new():NextNumber(-1.5, 1.5), Random.new():NextNumber(-1.5, 1.5), Random.new():NextNumber(-1.5, 1.5))
-		end
-
 	end)
 end)
 
