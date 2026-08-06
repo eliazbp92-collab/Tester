@@ -76,6 +76,7 @@ entity:SetCallback("OnSpawned", function()
 		task.wait (0.09)
 		script.Image = "rbxassetid://15187137650"
         task.wait (0.09)
+end
 end)
  
 entity:SetCallback("OnStartMoving", function()
