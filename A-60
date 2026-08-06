@@ -61,6 +61,7 @@ local entity = spawner.Create({
 entity:SetCallback("OnSpawned", function()
     print("Entity has spawned")
 	local entity = workspace.A60.RushNew
+	entity.spawn:Play()
 	entity.spawn.RollOffMinDistance = 1000
 	entity.Position = Vector3.new(0, 0, -1000)
 	task.spawn(function()
