@@ -6,8 +6,8 @@ local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/Regul
 
 local entity = Spawner:Create({
 	Entity = {
-		Name = "A-100",
-		Asset = "rbxassetid://14826206904",
+		Name = "A-60",
+		Asset = "rbxassetid://103889300548111",
 		HeightOffset = 0
 	},
 	Lights = {
@@ -64,7 +64,7 @@ entity:SetCallback("OnSpawned", function()
 	task.spawn(function()
 		local success, err = pcall(function()
 			local part = workspace:WaitForChild("A-60", 10)
-			local object = part:WaitForChild("RushNew", 10)
+			local object = part:WaitForChild("A-60New", 10)
 			local attachment = object:WaitForChild("Main", 10)
 			local face = attachment:WaitForChild("Face", 10)
 			object.CanCollide = false
