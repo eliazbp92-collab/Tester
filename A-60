@@ -76,8 +76,10 @@ entity:SetCallback("OnSpawned", function()
 			elseif random == 5 then
 				A1.Image = "rbxassetid://3413871766"
 			elseif random == 6 then
-				A1.Image = "rbxassetid://11131699495"
-end)
+				A1.Image = "rbxassetid://11131699495"			
+            end
+		end
+	end)
  
 entity:SetCallback("OnStartMoving", function()
     print("Entity has started moving")
