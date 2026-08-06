@@ -71,13 +71,14 @@ entity:SetCallback("OnSpawned", function()
 
 			local textures = {
 				"rbxassetid://132505677861835",
-				"rbxassetid://113341291399358",
-				"rbxassetid://84513865367343",
-				"rbxassetid://91404640127708",
-				"rbxassetid://140295944899005",
-				"rbxassetid://118168477565330",
-				"rbxassetid://71280507926908",
-				"rbxassetid://99778755008712",
+				"rbxassetid://74160859819329",
+				"rbxassetid://136515879002087",
+				"rbxassetid://117853822543313",
+				"rbxassetid://98034634977361",
+				"rbxassetid://113930535714597",
+				"rbxassetid://136785362208616",
+				"rbxassetid://102884978488080",
+			    "rbxassetid://102240715547915",
 			}
 
 			local startTime = tick()
