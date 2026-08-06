@@ -76,7 +76,17 @@ entity:SetCallback("OnSpawned", function()
 		task.wait (0.09)
 		script.Image = "rbxassetid://15187137650"
         task.wait (0.09)
-end
+    end
+	end)
+	task.spawn(function()
+	local Entity = workspace.A60.RushNew.MonsterGui
+	local Image = Entity.Image1
+	local MoveAMT = 0.18
+	while wait(0.02) do
+		Entity.ExtentsOffsetWorldSpace = Vector3.new(Random.new():NextNumber(-MoveAMT,MoveAMT),Random.new():NextNumber(-MoveAMT,MoveAMT),Random.new():NextNumber(-MoveAMT,MoveAMT))
+	end
+	end)
+end)
 end)
  
 entity:SetCallback("OnStartMoving", function()
